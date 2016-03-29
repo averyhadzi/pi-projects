@@ -1,0 +1,21 @@
+{
+  "name": "Pi Projects",
+  "version": "0.0.0",
+  "homepage": "https://github.com/averyhadzi/pi-projects",
+  "author": "Avery Wolkin Hadzi",
+  "description": "Collection of homebrew projects for the Raspberry Pi",
+  "main": "index.html",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "1.11",
+    "bootstrap-sass-official": "~3.3.6",
+    "bootstrap": "~3.3.6"
+  }
+}

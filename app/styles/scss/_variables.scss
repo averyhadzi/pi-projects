@@ -1,0 +1,57 @@
+// Palette and other vars
+
+$off-white: #f2f2f2;
+$border-color: #cccccc;
+
+
+$white: #fff;
+$black: #000;
+$red: #be1324;
+$brand-green: #a8b533;
+$brand-blue-bright: #00a9e0;
+$brand-blue-dark: #004265;
+$brand-blue-darkest: #003c5c;
+$dark-grey: #404041;
+$med-grey: #6d6e71;
+
+// Additional screen sizes
+$screen-xl: 2000px;
+$container-max: 1170px;
+$iphone-min: 375px;
+$iphone-max: 667px;
+
+// Animation and Transition Settings
+$transition-time: .2s;
+
+// Fonts
+$font-family-sans-serif: 'Open Sans', Helvetica, Arial, sans-serif;
+$font-family: $font-family-sans-serif;
+$font-size-base: 16px;
+$font-size-large: 18px;
+$font-size-small: 14px;
+$headings-font-weight: 300;
+
+
+// General Overrides
+
+$body-bg : $black;
+$text-color: $white;
+$link-color: #00a9e0;
+$link-hover-color: $brand-blue-dark;
+$link-hover-decoration: none;
+
+// Nav overrides
+
+$navbar-height: auto;
+$navbar-border-radius: 0;
+$navbar-default-color: $dark-grey;
+$navbar-default-bg: $off-white;
+$navbar-default-border: $border-color;
+$nav-link-hover-bg: none;
+// Navbar collapse
+//** Point at which the navbar becomes uncollapsed.
+$grid-float-breakpoint:     $screen-md-min;
+
+// Button Overrides
+
+$btn-border-radius-base: 0;

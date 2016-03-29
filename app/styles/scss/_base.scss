@@ -1,0 +1,69 @@
+html, body, .wrapper, .page {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin:0;
+}
+body {
+  font-family: $font-family;
+  font-weight: 300;
+  // @media screen and (max-width: $screen-sm) {
+  //   font-size: 12px;
+  // }
+}
+
+@media screen and (max-width: $screen-sm) {
+  body {
+    font-size: $font-size-small;
+    p, a {
+      font-size: $font-size-base;
+    }
+  }
+}
+
+@media screen and (min-width: $screen-lg) {
+  body {
+    font-size: $font-size-large;
+  }
+}
+
+.container-fluid {
+  // max-width: $container-max;
+}
+
+
+video {
+  width: 100%;
+  display: block !important;
+}
+
+// Buttons & Links
+
+a {
+  transition: color $transition-time;
+}
+
+.btn {
+  i {
+    padding-left: 0.5em;
+  }
+  &:hover, &:active {
+    color: $brand-blue-bright;
+  }
+}
+
+.btn-default {
+  background-color: transparent;
+  border-color: $white;
+  color: $white;
+  padding: 1em;
+  line-height: 1.2em;
+  border-radius: 0;
+  margin: 2em auto;
+  transition: all $transition-time;
+  &:hover, &:active, &:focus, &:active:hover {
+    background-color: rgba($white, 0.3);
+    color: $white;
+    border-color: $white;
+  }
+}

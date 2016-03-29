@@ -1,0 +1,37 @@
+{
+  "name": "Pi_Projects",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/averyhadzi/pi-projects.git"
+  },
+  "author": "Avery Wolkin Hadzi, LLC",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/averyhadzi/pi-projects/issues"
+  },
+  "devDependencies": {
+    "connect": "^3.4.1",
+    "connect-livereload": "^0.5.4",
+    "del": "^2.2.0",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-cache": "^0.4.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-css-url-adjuster": "^0.2.3",
+    "gulp-filter": "^3.0.1",
+    "gulp-imagemin": "^2.4.0",
+    "gulp-livereload": "^3.8.1",
+    "gulp-plumber": "^1.0.1",
+    "gulp-preprocess": "^2.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.5.4",
+    "gulp-sass": "^2.1.1",
+    "gulp-uglify": "^1.5.1",
+    "gulp-useref": "^3.0.5",
+    "main-bower-files": "^2.11.1",
+    "opn": "^4.0.0",
+    "serve-index": "^1.7.3",
+    "serve-static": "^1.10.2"
+  }
+}
