@@ -1,43 +1,45 @@
-var errorCallback = function(e) {
-    console.log('Reeeejected!', e);
-  };
+// var errorCallback = function(e) {
+//     console.log('Reeeejected!', e);
+//   };
 
-  // Chrome only prefix
-  navigator.webkitGetUserMedia({video: true, audio: false}, function(localMediaStream) {
-    var video = document.querySelector('video');
-    video.src = window.URL.createObjectURL(localMediaStream);
+//   // Chrome only prefix
+//   navigator.webkitGetUserMedia({video: true, audio: false}, function(localMediaStream) {
+//     var video = document.querySelector('video');
+//     video.src = window.URL.createObjectURL(localMediaStream);
 
-    // Note: onloadedmetadata doesn't fire in Chrome when using it with getUserMedia.
-    // See crbug.com/110938.
-    video.onloadedmetadata = function(e) {
-    var idx = 0;
-    var filters = [
-      'grayscale',
-      'sepia',
-      'blur',
-      'brightness',
-      'contrast',
-      'hue-rotate', 'hue-rotate2', 'hue-rotate3',
-      'saturate',
-      'invert',
-      ''
-    ];
+//     // Note: onloadedmetadata doesn't fire in Chrome when using it with getUserMedia.
+//     // See crbug.com/110938.
+//     video.onloadedmetadata = function(e) {
+//     var idx = 0;
+//     var filters = [
+//       'grayscale',
+//       'sepia',
+//       'blur',
+//       'brightness',
+//       'contrast',
+//       'hue-rotate', 'hue-rotate2', 'hue-rotate3',
+//       'saturate',
+//       'invert',
+//       ''
+//     ];
 
-    function changeFilter(e) {
-      console.log('changed filter');
-      var el = e.target;
-      el.className = '';
-      var effect = filters[idx++ % filters.length]; // loop through filters.
-      if (effect) {
-        el.classList.add(effect);
-      }
-    }
+//     function changeFilter(e) {
+//       console.log('changed filter');
+//       var el = e.target;
+//       el.className = '';
+//       var effect = filters[idx++ % filters.length]; // loop through filters.
+//       if (effect) {
+//         el.classList.add(effect);
+//       }
+//     }
 
-    document.querySelector('video').addEventListener(
-        'click', changeFilter, false);
-    };
-  }, errorCallback);
+//     document.querySelector('video').addEventListener(
+//         'click', changeFilter, false);
+//     };
+//   }, errorCallback);
 
+
+var core = new MotionDetector.Core();
 
 $(document).ready(function(){
   var day = moment().format('dddd');
@@ -81,5 +83,31 @@ $(document).ready(function(){
 
   });
 
+  // number of drops created.
+  var nbDrop = 858; 
+
+  // function to generate a random number range.
+  function randRange( minNum, maxNum) {
+    return (Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum);
+  }
+
+  // function to generate drops
+  function createRain() {
+
+    for( i=1;i<nbDrop;i++) {
+    var dropLeft = randRange(0,1600);
+    var dropTop = randRange(-1000,1400);
+
+    $('.rain').append('<div class="drop" id="drop'+i+'"></div>');
+    $('#drop'+i).css('left',dropLeft);
+    $('#drop'+i).css('top',dropTop);
+    }
+
+  }
+  // Make it rain
+  createRain();
+
 
 });
+
+

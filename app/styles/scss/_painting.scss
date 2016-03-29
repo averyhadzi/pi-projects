@@ -1,0 +1,100 @@
+.painting {
+  position: relative;
+  width: 1024px;
+  margin: 0 auto;
+  text-align: center;
+  overflow: hidden;
+  img {
+    width: 100%;
+    z-index: -1;
+  }
+  .eye {
+    position: absolute;
+    background-color: $black;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+  }
+  .woman {
+    width: 80px;
+    height: 20px;
+    position: absolute;
+    top: 390px;
+    left: 245px;
+    .eye {
+      animation: shiftyEye 2s infinite;
+      &.left {
+        top: 7px;
+        left: 0;
+      }
+      &.right {
+        top: 11px;
+        right: 0;
+      }
+    }
+  }
+  .man {
+    width: 107px;
+    height: 20px;
+    position: absolute;
+    top: 285px;
+    right: 256px;
+    .eye {
+      width: 15px;
+      height: 15px;
+      animation: rollingEye 2s infinite;
+      &.left {
+        top: 0;
+        left: 0;
+      }
+      &.right {
+        top: -2px;
+        right: 0;
+      }
+    }
+  }
+}
+
+
+
+@keyframes shiftyEye {
+  0%   { transform: translateX(-5px); }
+  25% { transform: translateX(0px); }
+  50% { transform: translateX(5px); }
+  100% { transform: translateX(0px); }
+}
+
+@keyframes rollingEye {
+  0%   { transform: translate(-20%, 0); }
+  20% { transform: translate(-20%, -25%); }
+  40% { transform: translate(0, -25%); }
+  60% { transform: translate(20%, 25%); }
+  60% { transform: translate(-20%, -25%); }
+  100% { transform: translate(0px, 0px); }
+}
+
+
+
+// RAIN
+
+
+.drop {
+  @include linearGradient(rgba(13,52,58,1),rgba(255,255,255,0.6) );
+  // background:-webkit-gradient(linear,0% 0%,0% 100%, from(rgba(13,52,58,1) ), to(rgba(255,255,255,0.6))  );
+  // background: -moz-linear-gradient(top, rgba(13,52,58,1) 0%, rgba(255,255,255,.6) 100%);
+  width:1px;
+  height:89px;
+  position: absolute;
+  bottom:200px;
+  -webkit-animation: fall .63s linear infinite;
+  -moz-animation: fall .63s linear infinite;
+  
+}
+
+/* animate the drops*/
+@-webkit-keyframes fall {
+  to {margin-top:900px;}
+}
+@-moz-keyframes fall {
+  to {margin-top:900px;}
+}
