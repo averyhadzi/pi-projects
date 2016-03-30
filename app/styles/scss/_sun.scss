@@ -1,0 +1,89 @@
+.sun {
+  position: absolute;
+  top: -15%;
+  left: -10%;
+  display: block;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background-color: $yellow; 
+  box-shadow: 0 0 50px $yellow;
+
+  .ray {
+    width: 5px;
+    height: 200px;
+    background-color: $yellow;
+    box-shadow: 0 0 5px $yellow;
+    border-radius: 10px;
+    display: block;
+    position: absolute;
+
+    &.r1 {
+      top: 95%;
+      left: 30%;
+      animation: sunBeamsOne 2s linear infinite;
+    }
+    &.r2 {
+      top: 95%;
+      left: 65%;
+      transform: rotate(-15deg);
+      animation: sunBeamsTwo 3s linear infinite;
+    }
+    &.r3 {
+      top: 80%;
+      right: 0px;
+      transform: rotate(-45deg);
+      animation: sunBeamsThree 2s linear infinite;
+    }
+    &.r4 {
+      top: 50%;
+      right: -10%;
+      transform: rotate(-65deg);
+      animation: sunBeamsFour 4s linear infinite;
+    }
+    &.r5 {
+      top: 25%;
+      left: 110%;
+      transform: rotate(-90deg);
+      animation: sunBeamsFive 3s linear infinite;
+    }
+  }
+}
+
+
+
+@keyframes sunBeamsOne {
+    0% { transform: translateY(3%); }
+    25% { transform: translateY(0); }
+    75% { transform: translateY(-3%); }
+    100% { transform: translateY(0); }
+}
+
+
+@keyframes sunBeamsTwo {
+    0% { transform: rotate(-15deg) translateY(5%); }
+    25% { transform: rotate(-15deg) translateY(0); }
+    75% { transform: rotate(-15deg) translateY(-5%); }
+    100% { transform: rotate(-15deg) translateY(0); }
+}
+
+@keyframes sunBeamsThree {
+    0% { transform: rotate(-45deg) translateY(3%); }
+    25% { transform: rotate(-45deg) translateY(0); }
+    75% { transform: rotate(-45deg) translateY(-3%); }
+    100% { transform: rotate(-45deg) translateY(0); }
+}
+
+@keyframes sunBeamsFour {
+    0% { transform: rotate(-65deg) translateY(5%); }
+    25% { transform: rotate(-65deg) translateY(0); }
+    75% { transform: rotate(-65deg) translateY(-5%); }
+    100% { transform: rotate(-65deg) translateY(0); }
+}
+
+@keyframes sunBeamsFive {
+    0% { transform: rotate(-90deg) translateY(5%); }
+    25% { transform: rotate(-90deg) translateY(0); }
+    75% { transform: rotate(-90deg) translateY(-5%); }
+    100% { transform: rotate(-90deg) translateY(0); }
+}

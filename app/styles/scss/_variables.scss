@@ -7,12 +7,8 @@ $border-color: #cccccc;
 $white: #fff;
 $black: #000;
 $red: #be1324;
-$brand-green: #a8b533;
-$brand-blue-bright: #00a9e0;
-$brand-blue-dark: #004265;
-$brand-blue-darkest: #003c5c;
-$dark-grey: #404041;
-$med-grey: #6d6e71;
+$yellow: #ffe100;
+$lt-blue: #abebf4;
 
 // Additional screen sizes
 $screen-xl: 2000px;
@@ -37,17 +33,17 @@ $headings-font-weight: 300;
 $body-bg : $black;
 $text-color: $white;
 $link-color: #00a9e0;
-$link-hover-color: $brand-blue-dark;
+$link-hover-color: $white;
 $link-hover-decoration: none;
 
 // Nav overrides
 
-$navbar-height: auto;
-$navbar-border-radius: 0;
-$navbar-default-color: $dark-grey;
-$navbar-default-bg: $off-white;
-$navbar-default-border: $border-color;
-$nav-link-hover-bg: none;
+// $navbar-height: auto;
+// $navbar-border-radius: 0;
+// $navbar-default-color: $dark-grey;
+// $navbar-default-bg: $off-white;
+// $navbar-default-border: $border-color;
+// $nav-link-hover-bg: none;
 // Navbar collapse
 //** Point at which the navbar becomes uncollapsed.
 $grid-float-breakpoint:     $screen-md-min;
