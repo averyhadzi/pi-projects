@@ -35,12 +35,30 @@
     border-radius: 50%;
     z-index: 0;
   }
+  .smile {
+    position: absolute;
+    width: 100%;
+    opacity: 0;
+    animation: smileFade 6s infinite ease;
+    animation-delay: 1000s;
+    animation-direction: alternate;
+    img {
+      display: block;
+    }
+  }
   .woman {
-    width: 80px;
-    height: 20px;
+    width: 100px;
+    height: 100px;
     position: absolute;
     top: 390px;
-    left: 245px;
+    left: 225px;
+    .eye__box {
+      position: absolute;
+      top: 0;
+      left: 20px;
+      width: 80px;
+      height: 20px;
+    }
     .eye {
       animation: shiftyEye 2s infinite;
       &.left {
@@ -52,13 +70,23 @@
         right: 0;
       }
     }
+    .smile {
+      bottom: 4px;
+    }
   }
   .man {
-    width: 107px;
-    height: 20px;
+    width: 120px;
+    height: 120px;
     position: absolute;
     top: 285px;
     right: 256px;
+    .eye__box {
+      position: absolute;
+      top: 0;
+      left: 14px;
+      width: 107px;
+      height: 20px;
+    }
     .eye {
       width: 15px;
       height: 15px;
@@ -71,6 +99,10 @@
         top: -2px;
         right: 0;
       }
+    }
+    .smile {
+      bottom: 14px;
+      left: 15px;
     }
   }
 }
@@ -93,3 +125,8 @@
   100% { transform: translate(0px, 0px); }
 }
 
+
+@keyframes smileFade {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}

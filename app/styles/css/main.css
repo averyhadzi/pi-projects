@@ -5952,12 +5952,30 @@ a {
     height: 10px;
     border-radius: 50%;
     z-index: 0; }
+  .painting .smile {
+    position: absolute;
+    width: 100%;
+    opacity: 0;
+    -webkit-animation: smileFade 6s infinite ease;
+    animation: smileFade 6s infinite ease;
+    -webkit-animation-delay: 1000s;
+    animation-delay: 1000s;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate; }
+    .painting .smile img {
+      display: block; }
   .painting .woman {
-    width: 80px;
-    height: 20px;
+    width: 100px;
+    height: 100px;
     position: absolute;
     top: 390px;
-    left: 245px; }
+    left: 225px; }
+    .painting .woman .eye__box {
+      position: absolute;
+      top: 0;
+      left: 20px;
+      width: 80px;
+      height: 20px; }
     .painting .woman .eye {
       -webkit-animation: shiftyEye 2s infinite;
       animation: shiftyEye 2s infinite; }
@@ -5967,12 +5985,20 @@ a {
       .painting .woman .eye.right {
         top: 11px;
         right: 0; }
+    .painting .woman .smile {
+      bottom: 4px; }
   .painting .man {
-    width: 107px;
-    height: 20px;
+    width: 120px;
+    height: 120px;
     position: absolute;
     top: 285px;
     right: 256px; }
+    .painting .man .eye__box {
+      position: absolute;
+      top: 0;
+      left: 14px;
+      width: 107px;
+      height: 20px; }
     .painting .man .eye {
       width: 15px;
       height: 15px;
@@ -5984,6 +6010,9 @@ a {
       .painting .man .eye.right {
         top: -2px;
         right: 0; }
+    .painting .man .smile {
+      bottom: 14px;
+      left: 15px; }
 
 @-webkit-keyframes shiftyEye {
   0% {
@@ -6052,6 +6081,18 @@ a {
   100% {
     -webkit-transform: translate(0px, 0px);
     transform: translate(0px, 0px); } }
+
+@-webkit-keyframes smileFade {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes smileFade {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
 
 .drop {
   background: #0d343a;
