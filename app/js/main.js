@@ -73,9 +73,12 @@ $(document).ready(function(){
 
 
     // Sunset / Sunrise 
-    var sunriseTime = moment(data.sys.sunrise).unix();
-    var sunsetTime = moment(data.sys.sunset).unix();
-    var utcTime = moment();
+
+    var zone = 'America/Denver';
+    var sunriseTime = moment.unix(data.sys.sunrise).tz(zone);
+    var sunsetTime = moment.unix(data.sys.sunset).tz(zone);
+    var utcTime = moment.utc();
+
 
     if(utcTime > sunriseTime) {
       $('#night').addClass('faded');
@@ -84,7 +87,8 @@ $(document).ready(function(){
       $('#night, #default, #umbrella').toggleClass('faded');
     }
 
-    console.log('current ' + moment(utcTime).format('h:mm a') + ' sunsetUnix ' + moment(sunsetTime).format('h:mm a'))
+    console.log('current ' + moment().format('h:mm a') + ' sunsetUnix ' + moment(sunsetTime).format('h:mm a'))
+
 
     if(weatherDescription.match(/cloud/gi)) {
       $('#clouds').removeClass('inactive');
