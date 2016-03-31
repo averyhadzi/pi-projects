@@ -1,6 +1,7 @@
 .painting {
   position: relative;
   width: 1024px;
+  height: 1240px;
   margin: 0 auto;
   text-align: center;
   overflow: hidden;
@@ -8,10 +9,23 @@
   .inactive {
     display: none;
   }
-  
+
   img {
     width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
     z-index: -1;
+    opacity: 1;
+    // transition: opacity 6s;
+
+    .special {
+      // z-index: -9999;
+    }
+    &.faded {
+      opacity: 0;
+      transition: opacity 6s;
+    }
   }
   .eye {
     position: absolute;
@@ -19,6 +33,7 @@
     width: 10px;
     height: 10px;
     border-radius: 50%;
+    z-index: 0;
   }
   .woman {
     width: 80px;

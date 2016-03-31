@@ -23,3 +23,23 @@
 @-moz-keyframes fall {
   to {margin-top:900px;}
 }
+
+
+
+// SNOW
+
+.snowflake {
+  // @include linearGradient(rgba(13,52,58,1),rgba(255,255,255,0.6) );
+  // background:-webkit-gradient(linear,0% 0%,0% 100%, from(rgba(13,52,58,1) ), to(rgba(255,255,255,0.6))  );
+  // background: -moz-linear-gradient(top, rgba(13,52,58,1) 0%, rgba(255,255,255,.6) 100%);
+  background-color: $white;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  position: absolute;
+  bottom:200px;
+  opacity: 0;
+  -webkit-animation: fall 8s linear infinite;
+  -moz-animation: fall 8s linear infinite;
+  
+}

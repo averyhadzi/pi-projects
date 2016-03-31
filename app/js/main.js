@@ -53,38 +53,82 @@ $(document).ready(function(){
       $('.time').text(time);
   }, 1000);
 
-    $.getJSON( "http://api.openweathermap.org/data/2.5/weather?id=5425043&APPID=e69ae6c95baa97cda40d37f0159c0f67&units=imperial", function( data ) {
+    var cityId = '5425043'; // Highlands Ranch
+    // var cityId = '5856195' // Honolulu, HI
+    // var cityId = '993800'; // Joburg
+    // var cityId = '5389489'; // Sacramento
+
+
+
+    $.getJSON( 'http://api.openweathermap.org/data/2.5/weather?id=' + cityId + '&APPID=e69ae6c95baa97cda40d37f0159c0f67&units=imperial', function( data ) {
     var items = [];
     console.log(data)
-    var weatherTemp = data.main.temp;
-    var weatherTempF = Math.round(weatherTemp);
-    var weatherID = data.weather[0].id;
-    var weatherIconId = data.weather[0].icon;
-    var weatherIcon = 'http://openweathermap.org/img/w/' + weatherIconId + '.png';
-    var weatherMain = data.weather[0].main;
-    var weatherDescription = data.weather[0].description;
+    var weatherTemp = data.main.temp,
+        weatherTempF = Math.round(weatherTemp),
+        weatherID = data.weather[0].id,
+        weatherIconId = data.weather[0].icon,
+        weatherIcon = 'http://openweathermap.org/img/w/' + weatherIconId + '.png',
+        weatherMain = data.weather[0].main,
+        weatherDescription = data.weather[0].description;
 
-    function weatherIcon(weatherID) {
-        switch (weatherID) { 
-            case '211': 
-                return 'wi-day-thunderstorm';
-                break;  
-            case '803': 
-                return 'wi-day-cloudy';
-                break;  
-        }
-    };
+
+    // Sunset / Sunrise 
+    var sunriseTime = moment(data.sys.sunrise).unix();
+    var sunsetTime = moment(data.sys.sunset).unix();
+    var utcTime = moment();
+
+    if(utcTime > sunriseTime) {
+      $('#night').addClass('faded');
+    } 
+    if(utcTime > sunsetTime) {
+      $('#night, #default, #umbrella').toggleClass('faded');
+    }
+
+    console.log('current ' + moment(utcTime).format('h:mm a') + ' sunsetUnix ' + moment(sunsetTime).format('h:mm a'))
+
+    if(weatherDescription.match(/cloud/gi)) {
+      $('#clouds').removeClass('inactive');
+      if($('#default').hasClass('faded')) {
+        $('#umbrella, #default').toggleClass('faded');
+      }
+    } 
+    if (weatherDescription.match(/rain/gi)) {
+      $('.rain').removeClass('inactive');
+      $('#umbrella, #default').toggleClass('faded');
+      createRain();
+    }
+    if (weatherDescription.match(/sun/gi) || weatherDescription.match(/clear/gi) ) {
+      $('.sunny').removeClass('inactive');
+    }
+    if (weatherDescription.match(/snow/gi)) {
+      $('.snow').removeClass('inactive');
+      $('#umbrella, #default').toggleClass('faded');
+      createSnow();
+    }
+
+
+    // function weatherIcon(weatherID) {
+    //     switch (weatherID) { 
+    //         case '211': 
+    //             return 'wi-day-thunderstorm';
+    //             break;  
+    //         case '803': 
+    //             return 'wi-day-cloudy';
+    //             break;  
+    //     }
+    // };
+
     var weatherID = weatherID;
     $('.weatherIcon').addClass(weatherID);
     $('.weatherIcon img').attr('src', weatherIcon);
-      $('.weatherTemp').html(weatherTempF + '<span>&deg;</span>');
-      $('.weatherMain').text(weatherMain);
-      $('.weatherDescription').text(weatherDescription);
+    $('.weatherTemp').html(weatherTempF + '<span>&deg;</span>');
+    $('.weatherMain').text(weatherMain);
+    $('.weatherDescription').text(weatherDescription);
 
   });
 
   // number of drops created.
-  var nbDrop = 858; 
+  var nbDrop = 2000; 
 
   // function to generate a random number range.
   function randRange( minNum, maxNum) {
@@ -104,10 +148,39 @@ $(document).ready(function(){
     }
 
   }
-  // Make it rain
-  createRain();
+
+
+
+  // function to generate snow
+  function createSnow() {
+
+    for( i=1;i<nbDrop;i++) {
+    var dropLeft = randRange(0,2000);
+    var dropTop = randRange(-1000,1400);
+
+    $('.snow').append('<div class="snowflake" id="snowflake'+i+'"></div>');
+    $('#snowflake'+i).css('left',dropLeft);
+    $('#snowflake'+i).css('top',dropTop);
+    
+    $('#snowflake'+i).animate({
+        opacity: Math.random()
+      });
+    }
+
+  }
+  
 
 
 });
+
+var time = new Date().getTime();
+function refresh() {
+   if(new Date().getTime() - time >= 3600000) 
+       window.location.reload(true);
+   else 
+       setTimeout(refresh, 3600000);
+}
+
+setTimeout(refresh, 3600000);
 
 

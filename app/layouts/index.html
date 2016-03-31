@@ -6,8 +6,14 @@
 <div class="wrapper">
 <!--   <video id="webCamWindow" autoplay></video>
     <div id="movement"></div> -->
+  <div class="weather-info">
+    <h1 class="weatherTemp"></h1>
+    <span class="weatherIcon"><img src="" /></span>
+    <h2 class="weatherMain"></h2>
+  </div>
   <div class="painting">
     <div class="rain inactive"></div>
+    <div class="snow inactive"></div>
     <div id="clouds" class="inactive">
       <div class="cloud x1"></div>
       <div class="cloud x2"></div>
@@ -15,14 +21,24 @@
       <div class="cloud x4"></div>
       <div class="cloud x5"></div>
     </div>  
-    <div class="sun inactive">
-      <div class="ray r1"></div>
-      <div class="ray r2"></div>
-      <div class="ray r3"></div>
-      <div class="ray r4"></div>
-      <div class="ray r5"></div>
+    <div class="sunny inactive">
+      <div class="ray_box">
+          <div class="ray ray1"></div>
+          <div class="ray ray2"></div>
+          <div class="ray ray3"></div>
+          <div class="ray ray4"></div>
+          <div class="ray ray5"></div>
+          <div class="ray ray6"></div>
+          <div class="ray ray7"></div>
+          <div class="ray ray8"></div>
+          <div class="ray ray9"></div>
+          <div class="ray ray10"></div>
+      </div>
+      <div class="sun"></div>
     </div>
-    <img src="images/american_gothic.jpg" />
+    <img id="default" src="images/american_gothic.jpg" />
+    <img id="umbrella" class="faded special" src="images/american_gothic-umbrella.jpg" />
+    <img id="night" class="faded special" src="images/american_gothic-night.jpg" />
     <div class="woman">
       <span class="eye left"></span>
       <span class="eye right"></span>

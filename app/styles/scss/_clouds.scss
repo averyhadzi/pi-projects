@@ -7,7 +7,7 @@
 
 #clouds{
     position: absolute;
-    padding: 100px 0;
+    padding: 0;
     // background: #c9dbe9;
     // background: -webkit-linear-gradient(top, #c9dbe9 0%, #fff 100%);
     // background: -linear-gradient(top, #c9dbe9 0%, #fff 100%);
@@ -16,38 +16,40 @@
 
 /*Time to finalise the cloud shape*/
 .cloud {
-    width: 200px; height: 60px;
-    background: #fff;
+    width: 400px; height: 250px;
+    // background: #fff;
+    background-image: url('../../images/cloud.png');
+    background-size: 100%;
 
-    box-shadow: 0 0 50px rgba($white, 100%);
+    // box-shadow: 0 0 50px rgba($white, 100%);
     
-    border-radius: 200px;
-    -moz-border-radius: 200px;
-    -webkit-border-radius: 200px;
+    // border-radius: 200px;
+    // -moz-border-radius: 200px;
+    // -webkit-border-radius: 200px;
     
-    position: relative; 
-}
-
-.cloud:before, .cloud:after {
-    content: '';
     position: absolute; 
-    background: #fff;
-    width: 100px; height: 80px;
-    position: absolute; top: -15px; left: 10px;
-    
-    border-radius: 100px;
-    -moz-border-radius: 100px;
-    -webkit-border-radius: 100px;
-    
-    -webkit-transform: rotate(30deg);
-    transform: rotate(30deg);
-    -moz-transform: rotate(30deg);
 }
 
-.cloud:after {
-    width: 120px; height: 120px;
-    top: -55px; left: auto; right: 15px;
-}
+// .cloud:before, .cloud:after {
+//     content: '';
+//     position: absolute; 
+//     background: #fff;
+//     width: 100px; height: 80px;
+//     position: absolute; top: -15px; left: 10px;
+    
+//     border-radius: 100px;
+//     -moz-border-radius: 100px;
+//     -webkit-border-radius: 100px;
+    
+//     -webkit-transform: rotate(30deg);
+//     transform: rotate(30deg);
+//     -moz-transform: rotate(30deg);
+// }
+
+// .cloud:after {
+//     width: 120px; height: 120px;
+//     top: -55px; left: auto; right: 15px;
+// }
 
 /*Time to animate*/
 .x1 {
